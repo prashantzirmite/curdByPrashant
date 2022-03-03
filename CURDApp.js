@@ -15,6 +15,7 @@ function addUser()
 	userArr.push(userObj);
 	localStorage.setItem("userDetails",JSON.stringify(userArr))
 	showDetaile();
+	LOU.identify('97980cfea0067', {  company: 'Example Company',  permissions: 'admin',  plan: 'premium',    })
 }
 function showDetaile()
 {
@@ -60,7 +61,7 @@ function showOld()
 }
 function updateUser()
 {
-	
+
 	var getInfo=JSON.parse(localStorage.getItem("userDetails"));
 	var k=document.getElementById("din").value;
 	let f=true;var r;
@@ -85,6 +86,7 @@ function updateUser()
 		}
 	localStorage.setItem("userDetails",JSON.stringify(getInfo))
 	showDetaile();
+	LOU.identify('97980cfea0067', {  company: 'Example Company',  permissions: 'admin',  plan: 'premium',    })
 	alert("update done")
 }
 function deleteUser()
@@ -104,13 +106,13 @@ function deleteUser()
 					f=false;
 					break;
 				}
-			
+
 		}
 		if(f)
 			alert("ID not Found")
 		else
 			getInfo.splice(r,1);
-		
+
 		localStorage.setItem("userDetails",JSON.stringify(getInfo))
 			showDetaile();
 		}
