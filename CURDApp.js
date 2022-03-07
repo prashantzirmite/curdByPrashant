@@ -124,7 +124,19 @@ function closeModal(){
 }
 function saveName(){
 	var userName=document.getElementById("userNameOnLoad").value;
-	console.log(userName);
-	closeModal();
-	LOU.identify('97980cfea0067', {  company: 'Example Company',  permissions: 'admin',  plan: 'premium',    })
+	var users=JSON.parse(localStorage.getItem("users"));
+
+	if(users==null)
+		users=[];
+	if(users.includes(userName)){
+		alert("Welcome, "+userName);
+		closeModal();
+	}
+	else{
+		users.push(userName);
+		localStorage.setItem("users",JSON.stringify(users));
+		closeModal();
+		LOU.identify('97980cfea0067', {  company: 'Example Company',  permissions: 'admin',  plan: 'premium',    })
+		LOU.startTour('993697113963');
+	}
 }
