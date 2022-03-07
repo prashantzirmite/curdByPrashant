@@ -123,7 +123,8 @@ function closeModal(){
 	modal.style.display = "none";
 }
 function saveName(){
-	var userName=document.getElementById("userNameOnLoad");
+	var userName=document.getElementById("userNameOnLoad").value;
+	console.log(userName);
 	closeModal();
 	LOU.identify('97980cfea0067', {  company: 'Example Company',  permissions: 'admin',  plan: 'premium',    })
 }
