@@ -20,7 +20,6 @@ function addUser()
 function showDetaile()
 {
 	var getInfo=JSON.parse(localStorage.getItem("userDetails"));
-
 	var temp="<table border='1'>";
 
 	for(var i=0;i<getInfo.length;i++)
@@ -125,7 +124,8 @@ function closeModal(){
 function saveName(){
 	var userName=document.getElementById("userNameOnLoad").value;
 	var users=JSON.parse(localStorage.getItem("users"));
-
+	localStorage.setItem("isLoggedIn",JSON.stringify("true"));
+	document.getElementById("adminName").innerHTML= userName;
 	if(users==null)
 		users=[];
 	if(users.includes(userName)){
@@ -136,7 +136,16 @@ function saveName(){
 		users.push(userName);
 		localStorage.setItem("users",JSON.stringify(users));
 		closeModal();
-		LOU.identify('97980cfea0067', {  company: userName,  permissions: 'admin',  plan: 'premium',    })
 		LOU.startTour('993697113963');
+		LOU.identify('97980cfea0067', {  company: userName,  permissions: 'admin',  plan: 'premium',    })
 	}
+}
+function logOut(){
+	localStorage.setItem("isLoggedIn",JSON.stringify("false"));
+	openModal();
+}
+
+function openModal(){
+	var modal=document.getElementById("myModal")
+	modal.style.display = "block";
 }

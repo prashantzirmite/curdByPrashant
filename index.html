@@ -1,105 +1,116 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title></title>
 	<!-- 5. Create a Simple CRUD Application using only JavaScript? -->
 	<link rel="stylesheet" href="bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-  <!-- <link  type="text/js" href=""> -->
-  <script type="text/javascript" src="CURDApp.js">
-   </script>
-	 <script src="//run.louassist.com/v2.5.1-m?id=867476031114"></script>
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+	<!-- <link  type="text/js" href=""> -->
+	<script type="text/javascript" src="CURDApp.js">
+	</script>
+	<script src="//run.louassist.com/v2.5.1-m?id=867476031114"></script>
 </head>
+
 <body>
 	<!-- The Modal -->
 	<div id="myModal" class="modal">
-	  <!-- Modal content -->
-	  <div class="modal-content">
+		<!-- Modal content -->
+		<div class="modal-content">
 			<div class="modal-header">
-					<h4 class="modal-title"> Enter Your Name </h4>
+				<h4 class="modal-title"> Enter Your Name </h4>
 			</div>
 			<div class="container userModal">
 				<input type="text" name="" value="" id="userNameOnLoad"> <br>
 				<div class="buttonGroup">
 					<input type="button" onclick="saveName()" name="" value="Save" class="btn btn-success">
 					<input type="button" onclick="closeModal()" name="" value="Close" class="btn btn-danger">
+				</div>
 			</div>
-			</div>
-	  </div>
+		</div>
 
 	</div>
 	<!-- Page Details -->
 	<div>
-  <br>
-  <form onsubmit="addUser()">
-  <div class="container" style="background-color: #ffe6ff" >
-    <div class="row">
-        <div class="col-12" style="text-align: center">Library Members</div>
-          <!-- <div class="col-"></div> -->
-        </div>
-        <div class="row">
-           <div class="col-4">ID</div>
-           <div class="col-4">Name</div>
-           <div class="col-4">Joining Date</div>
-           <!-- <div class="col-3">Renew Date</div> -->
-           <!-- <div class="col-1"><button class="btn btn-primary">Delete</button></div> -->
-      </div>
-      <div class="row">
-           <div class="col-4"><input id="id" type="text" required=""></div>
-           <div class="col-4"><input id="fname" type="text" required=""></div>
-           <div class="col-4"><input id="jdate" type="date" required=""></div>
-           <!-- <div class="col-2"><input id="rdate" type="textarea"></div> -->
-           <!-- <div class="col-1"><button class="btn btn-primary">Delete</button></div> -->
-      </div><br>
-      <div class="row">
-        <div class="col-12">
-          <center>
-              <input class="btn btn-success" type="submit"  value="ADD">
-              <br><br></center>
-                </div>
-      </div>
-    </form>
-      <div class="row">
-        <div class="col-5" style="text-align: right">Enter ID of user to update or delete</div>
-        <div class="col-7"><input type="text" id="din"></div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-12">
-          <center>
-               <input class="btn btn-warning"type="button" onclick="showOld()" value="Show Old">
-               <input class="btn btn-warning"type="button" onclick="updateUser()" value="Update">
-               <input class="btn btn-danger"type="button" onclick="deleteUser()" value="Delete">
-          </center>
-        </div>
-      </div>
+		<br>
+		<form onsubmit="addUser()">
+			<div class="container" style="background-color: #ffe6ff">
+				<div class="row">
+					<div class="col-12" style="text-align: center">Library Members</div>
+					<!-- <div class="col-"></div> -->
+				</div>
+				<div class="row">
+					<div class="col-4">ID</div>
+					<div class="col-4">Name</div>
+					<div class="col-4">Joining Date</div>
+					<!-- <div class="col-3">Renew Date</div> -->
+					<!-- <div class="col-1"><button class="btn btn-primary">Delete</button></div> -->
+				</div>
+				<div class="row">
+					<div class="col-4"><input id="id" type="text" required=""></div>
+					<div class="col-4"><input id="fname" type="text" required=""></div>
+					<div class="col-4"><input id="jdate" type="date" required=""></div>
+					<!-- <div class="col-2"><input id="rdate" type="textarea"></div> -->
+					<!-- <div class="col-1"><button class="btn btn-primary">Delete</button></div> -->
+				</div><br>
+				<div class="row">
+					<div class="col-12">
+						<center>
+							<input class="btn btn-success" type="submit" value="ADD">
+							<br><br>
+						</center>
+					</div>
+				</div>
+		</form>
+		<div class="row">
+			<div class="col-5" style="text-align: right">Enter ID of user to update or delete</div>
+			<div class="col-7"><input type="text" id="din"></div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-12">
+				<center>
+					<input class="btn btn-warning" type="button" onclick="showOld()" value="Show Old">
+					<input class="btn btn-warning" type="button" onclick="updateUser()" value="Update">
+					<input class="btn btn-danger" type="button" onclick="deleteUser()" value="Delete">
+				</center>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12" id="logInOut">
+				<div> You have logged in as : <span id="adminName"></span>
+					<input class="btn btn-warning" type="button" name="" value="Log Out" onclick="logOut()">
+					<!-- <input class="btn btn-success" type="button" name="" value="Log In" onclick="logOut()"> -->
+				</div>
+			</div>
+		</div>
 
-
-      <br>
-    </div>
-    <br>
+		<br>
+	</div>
+	<br>
 	<div class="container jumbotron" style="padding-top:10px">
- 		<div class="row">
-    		<div class="col-12" style="text-align: center">Library Members</div>
-    			<!-- <div class="col-"></div> -->
-  		</div>
-  	<div class="row">
-  				 <div class="col-1">Sr</div>
-           <div class="col-3">ID</div>
-   				 <div class="col-4">Name</div>
-   				 <div class="col-4">Joining Date</div>
-   				 <!-- <div class="col-3">Renew Date</div> -->
-   				 <!-- <div class="col-1"><button class="btn btn-primary">Delete</button></div> -->
- 		</div>
-       <br>
-    <div id="out"></div>
- 	</div>
-</div>
+		<div class="row">
+			<div class="col-12" style="text-align: center">Library Members</div>
+			<!-- <div class="col-"></div> -->
+		</div>
+		<div class="row">
+			<div class="col-1">Sr</div>
+			<div class="col-3">ID</div>
+			<div class="col-4">Name</div>
+			<div class="col-4">Joining Date</div>
+			<!-- <div class="col-3">Renew Date</div> -->
+			<!-- <div class="col-1"><button class="btn btn-primary">Delete</button></div> -->
+		</div>
+		<br>
+		<div id="out"></div>
+	</div>
+	</div>
 
-<script type="text/javascript">
-   showDetaile();
-</script>
+	<script type="text/javascript">
+		showDetaile();
+	</script>
 </body>
+
 </html>

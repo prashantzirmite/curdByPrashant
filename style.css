@@ -31,3 +31,9 @@
   margin-top: 0.5em !important;
   text-align: end;
 }
+#logInOut{
+  text-align: right;
+}
+#adminName{
+  color:blue;
+}
