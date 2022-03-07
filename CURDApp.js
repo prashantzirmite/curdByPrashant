@@ -136,7 +136,7 @@ function saveName(){
 		users.push(userName);
 		localStorage.setItem("users",JSON.stringify(users));
 		closeModal();
-		LOU.identify('97980cfea0067', {  company: 'Example Company',  permissions: 'admin',  plan: 'premium',    })
+		LOU.identify('97980cfea0067', {  company: userName,  permissions: 'admin',  plan: 'premium',    })
 		LOU.startTour('993697113963');
 	}
 }
