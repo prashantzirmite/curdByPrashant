@@ -15,7 +15,7 @@ function addUser()
 	userArr.push(userObj);
 	localStorage.setItem("userDetails",JSON.stringify(userArr))
 	showDetaile();
-	LOU.identify('97980cfea0067', {  company: 'Example Company',  permissions: 'admin',  plan: 'premium',    })
+	// LOU.identify('97980cfea0067', {  company: 'Example Company',  permissions: 'admin',  plan: 'premium',    })
 }
 function showDetaile()
 {
@@ -86,7 +86,7 @@ function updateUser()
 		}
 	localStorage.setItem("userDetails",JSON.stringify(getInfo))
 	showDetaile();
-	LOU.identify('97980cfea0067', {  company: 'Example Company',  permissions: 'admin',  plan: 'premium',    })
+	// LOU.identify('97980cfea0067', {  company: 'Example Company',  permissions: 'admin',  plan: 'premium',    })
 	alert("update done")
 }
 function deleteUser()
@@ -116,4 +116,14 @@ function deleteUser()
 		localStorage.setItem("userDetails",JSON.stringify(getInfo))
 			showDetaile();
 		}
+}
+function closeModal(){
+
+	var modal=document.getElementById("myModal")
+	modal.style.display = "none";
+}
+function saveName(){
+	var userName=document.getElementById("userNameOnLoad");
+	closeModal();
+	LOU.identify('97980cfea0067', {  company: 'Example Company',  permissions: 'admin',  plan: 'premium',    })
 }
