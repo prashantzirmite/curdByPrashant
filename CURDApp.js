@@ -136,7 +136,9 @@ function saveName(){
 		users.push(userName);
 		localStorage.setItem("users",JSON.stringify(users));
 		closeModal();
-		LOU.startTour('993697113963');
+		alert("Starting Tour");
+		LOU.startTour('993697113963')
+		// LOU.startTour('993697113963',false);
 		LOU.identify('97980cfea0067', {  company: userName,  permissions: 'admin',  plan: 'premium',    })
 	}
 }
